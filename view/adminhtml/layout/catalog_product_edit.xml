@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!-- File: view/adminhtml/layout/catalog_product_edit.xml -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="catalog_product_view" />
+    <body>
+        <referenceBlock name="product_form">
+            <arguments>
+                <argument name="data" xsi:type="array">
+                    <item name="js_config" xsi:type="array">
+                        <item name="provider" xsi:type="string">product_form.product_form_data_source</item>
+                        <item name="deps" xsi:type="string">product_form.product_form_data_source</item>
+                    </item>
+                    <item name="config" xsi:type="array">
+                        <item name="submit_url" xsi:type="url" path="catalog/product/save"/>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

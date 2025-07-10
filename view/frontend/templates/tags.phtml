@@ -1,0 +1,19 @@
+<?php
+
+/** @var \Hassan\ProductTags\Block\Product\View\Tags $block */ ?>
+<?php $tags = $block->getTags(); ?>
+
+<?php if (!empty($tags)): ?>
+    <div class="product-tags">
+        <h3><?= __('Tags') ?></h3>
+        <ul class="tags-list">
+            <?php foreach ($tags as $tag): ?>
+                <li>
+                    <a href="<?= $block->getTagUrl($tag) ?>" class="tag-link">
+                        <?= $block->escapeHtml($tag) ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
