@@ -1,37 +1,4 @@
-<!-- # productTags
-magento-product -tags
-
-# interesting findings
- -> process of create schema file maybe in previous version there was php file right now they are using xml file for it in magento 2
-
- -> process of module registratin process is dependency injection which is configured by di.xml file 
-
- -> resource connection work as databse connection 
-
- -> module registration process in module.xml file
-
- -> model-resource-collection process seems kind of wired maybe for decoupling process framework build like this 
-
- -> magento 2 alwasys prefared for repository patter for Abstraction Between Business Logic and Data Storage
-
- -> routing work process : https://commerce-docs.github.io/devdocs-archive/2.0/guides/v2.0/extension-dev-guide/routing.html
- 
- -> controller action class how to call a page from a route by rendaring resultPageFactory()
-
- -> phtml templete engine how works: A Block class (PHP) prepares data and methods for the template,The layout XML links the block class to the .phtml      template,Magento loads the .phtml file and executes the PHP inside it,The $block variable references the block instance, so it can call its methods,Any PHP logic runs, and it outputs the final HTML page sent to the browser
-
-
-
-
-# refarences
-    -> magento 2 best practice: https://www.icecubedigital.com/blog/complete-guide-on-magento-2-development-best-practices/
-    -> chatgpt
-    -> deepseek
-    -> magento docs
-    -> stack overflow -->
-
-
-## 🏷️ Magento 2 - Product Tags Module
+# 🏷️ Magento 2 - Product Tags Module
 
 A custom Magento 2 module for managing product tags through the admin panel and optionally rendering them on the frontend.
 
@@ -61,7 +28,7 @@ A custom Magento 2 module for managing product tags through the admin panel and 
   return $this->resultPageFactory->create();
 
 
-  ## 🧪 Challenges Faced
+## 🧪 Challenges Faced
 
 - ✅ Docker setup was smooth and functional, but setting up Magento required an **Adobe account** and Marketplace authentication, which consumed time and added complexity — especially challenging with **zero prior Magento experience**.
 
@@ -70,4 +37,19 @@ A custom Magento 2 module for managing product tags through the admin panel and 
 - 📦 Magento's **complex XML configuration system** (used for layout, DI, routes, and schema) requires a lot of precision. A missing attribute or typo can silently break functionality, making debugging frustrating.
 
 - 🧩 The **UI Component system** for admin forms and grids is powerful but overly verbose and difficult to grasp without prior experience. Connecting form fields to data sources through `form.xml`, data providers, and layout handles took time to fully understand.
+
+## 📚 References
+
+- 🧊 **Magento 2 Best Practices**  
+  [https://www.icecubedigital.com/blog/complete-guide-on-magento-2-development-best-practices/](https://www.icecubedigital.com/blog/complete-guide-on-magento-2-development-best-practices/)
+
+- 🤖 **ChatGPT** – For code generation, explanation of concepts, and debugging assistance.
+
+- 🔍 **DeepSeek** – For exploring source code, usage patterns, and Magento internals.
+
+- 📖 **Magento Official Documentation**  
+  [https://developer.adobe.com/commerce/](https://developer.adobe.com/commerce/)
+
+- 🧠 **Stack Overflow** – Community-driven solutions for specific issues and best practices.
+
 
