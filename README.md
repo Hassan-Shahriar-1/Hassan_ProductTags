@@ -1,0 +1,2 @@
+# productTags
+magento-product -tags
