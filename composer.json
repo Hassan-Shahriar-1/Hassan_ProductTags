@@ -1,0 +1,14 @@
+{
+  "name": "hassan/module-producttags",
+  "description": "Custom Product Tags Module",
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Hassan\\ProductTags\\": ""
+    }
+  },
+  "version": "1.0.0"
+}
