@@ -20,9 +20,7 @@ magento-product -tags
 
  -> phtml templete engine how works: A Block class (PHP) prepares data and methods for the template,The layout XML links the block class to the .phtml      template,Magento loads the .phtml file and executes the PHP inside it,The $block variable references the block instance, so it can call its methods,Any PHP logic runs, and it outputs the final HTML page sent to the browser
 
-# chanlenges faced
-    -> docker setup was good but needed adobe account so many things which kill my time (maybe due to have zero knowdledge in magento)
-    -> understaing the MRC process
+
 
 
 # refarences
@@ -33,7 +31,7 @@ magento-product -tags
     -> stack overflow -->
 
 
-    # 🏷️ Magento 2 - Product Tags Module
+## 🏷️ Magento 2 - Product Tags Module
 
 A custom Magento 2 module for managing product tags through the admin panel and optionally rendering them on the frontend.
 
@@ -61,3 +59,15 @@ A custom Magento 2 module for managing product tags through the admin panel and 
 - A **Controller Action** typically returns a page using:
   ```php
   return $this->resultPageFactory->create();
+
+
+  ## 🧪 Challenges Faced
+
+- ✅ Docker setup was smooth and functional, but setting up Magento required an **Adobe account** and Marketplace authentication, which consumed time and added complexity — especially challenging with **zero prior Magento experience**.
+
+- 🤯 Understanding the **Model → ResourceModel → Collection (MRC)** architecture was difficult at first. The decoupled, layered system is powerful but not beginner-friendly.
+
+- 📦 Magento's **complex XML configuration system** (used for layout, DI, routes, and schema) requires a lot of precision. A missing attribute or typo can silently break functionality, making debugging frustrating.
+
+- 🧩 The **UI Component system** for admin forms and grids is powerful but overly verbose and difficult to grasp without prior experience. Connecting form fields to data sources through `form.xml`, data providers, and layout handles took time to fully understand.
+
