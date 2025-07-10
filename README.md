@@ -8,6 +8,8 @@ magento-product -tags
  -> module registration process in module.xml file
  ->model-resource-collection process seems kind of wired maybe for decoupling process framework build like this 
  -> magento 2 alwasys prefared for repository patter for Abstraction Between Business Logic and Data Storage
+ -> routing work process : https://commerce-docs.github.io/devdocs-archive/2.0/guides/v2.0/extension-dev-guide/routing.html
+ -> controller action class how to call a page from a route by rendaring resultPageFactory()
 
 # chanlenges faced
     -> docker setup was good but needed adobe account so many things which kill my time (maybe due to have zero knowdledge in magento)
