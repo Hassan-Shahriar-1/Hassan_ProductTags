@@ -35,44 +35,29 @@ magento-product -tags
 
     # 🏷️ Magento 2 - Product Tags Module
 
-**Module Name:** `Strativ_ProductTags` (renamed to `Hassan_Tags`)  
-**Purpose:** Manage custom product tags via admin panel and optionally display on the storefront.
+A custom Magento 2 module for managing product tags through the admin panel and optionally rendering them on the frontend.
 
 ---
 
-## 🔍 Key Findings & Learnings
+## 🔍 Interesting Findings
 
-### 🧱 Magento Module Structure & Registration
+- Magento 2 uses **XML files (`db_schema.xml`)** to define database schema instead of PHP-based setup scripts used in older versions.
+  
+- **Module registration** involves two files:
+  - `registration.php` – Registers the module with Magento
+  - `etc/module.xml` – Declares module name and version
 
-- **Module Registration:**
-  - `registration.php` — Registers module with Magento.
-  - `etc/module.xml` — Declares the module’s name and version.
+- **Dependency Injection (DI)** is configured via `etc/di.xml`, allowing Magento to auto-resolve class dependencies and bind interfaces to implementations.
 
-- **Dependency Injection:**
-  - Configured in `etc/di.xml`.
-  - Binds interfaces to implementations and controls object lifecycle.
+- The **ResourceModel** acts as a bridge between the model and database. Magento uses a three-part pattern:  
+  **Model → ResourceModel → Collection**  
+  Although it may feel overly abstract, this promotes clean architecture and testability.
 
----
+- Magento strongly recommends the **Repository Pattern** to abstract business logic from direct model/data layer interaction. This improves flexibility, test coverage, and clean separation.
 
-### 🗃️ Database Schema & Resource Connection
+- **Routing** is XML-based and defined in `routes.xml`. Each route maps to a controller action.
+  - 📖 [Magento 2 Routing Guide](https://commerce-docs.github.io/devdocs-archive/2.0/guides/v2.0/extension-dev-guide/routing.html)
 
-- **Database Schema:**
-  - Defined using `db_schema.xml`.
-  - Replaces legacy install/upgrade PHP scripts from Magento 1.
-
-- **Resource Model:**
-  - Connects model to database via Magento’s DB abstraction.
-  - `Model → ResourceModel → Collection` pattern ensures separation of concerns.
-
----
-
-### 🔁 Repository Pattern
-
-- Used for abstraction between business logic and data storage.
-- Promotes:
-  - Decoupling
-  - Testability
-  - Clean service contracts
-- Example:
+- A **Controller Action** typically returns a page using:
   ```php
-  $this->tagRepository->save($tag);
+  return $this->resultPageFactory->create();
